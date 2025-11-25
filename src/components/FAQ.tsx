@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import Script from 'next/script';
 
 const faqs = [
   {
@@ -54,10 +55,18 @@ const faqs = [
 
 const FAQ = () => {
   const [openItem, setOpenItem] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const toggleItem = (id: number) => {
     setOpenItem(openItem === id ? null : id);
   };
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+    setOpenItem(null); // Close any open item when toggling view
+  };
+
+  const displayedFaqs = showAll ? faqs : faqs.slice(0, 3);
 
   return (
     <section id="faq" className="py-20 bg-white dark:bg-secondary-900">
@@ -72,7 +81,7 @@ const FAQ = () => {
 
         <div className="max-w-3xl mx-auto">
           <div className="space-y-4">
-            {faqs.map((faq) => (
+            {displayedFaqs.map((faq) => (
               <div
                 key={faq.id}
                 className="border border-secondary-200 dark:border-secondary-700 rounded-lg overflow-hidden"
@@ -113,20 +122,57 @@ const FAQ = () => {
               </div>
             ))}
           </div>
-          
-          <div className="mt-12 text-center">
-            <p className="text-secondary-600 dark:text-secondary-300 mb-6">
-              Don&apos;t see your question here? Contact us directly and we&apos;ll be happy to help.
-            </p>
-            <a
-              href="#contact"
-              className="btn btn-primary"
+
+          {/* Show More/Less Button */}
+          <div className="mt-8 text-center">
+            <button
+              onClick={toggleShowAll}
+              className="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors duration-300 font-medium shadow-md hover:shadow-lg"
             >
-              Contact Us
-            </a>
+              {showAll ? (
+                <>
+                  Show Less
+                  <FiChevronUp className="ml-2 w-4 h-4" />
+                </>
+              ) : (
+                <>
+                  Show More Questions
+                  <FiChevronDown className="ml-2 w-4 h-4" />
+                </>
+              )}
+            </button>
           </div>
+          
+          {showAll && (
+            <div className="mt-12 text-center">
+              <p className="text-secondary-600 dark:text-secondary-300">
+                Don&apos;t see your question here? Contact us directly and we&apos;ll be happy to help.
+              </p>
+            </div>
+          )}
         </div>
       </div>
+
+      {/* FAQ Schema Markup */}
+      <Script id="faq-schema" type="application/ld+json" strategy="afterInteractive">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              ${faqs.map(faq => `
+                {
+                  "@type": "Question",
+                  "name": "${faq.question}",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "${faq.answer.replace(/"/g, '\\"')}"
+                  }
+                }`).join(',')}
+            ]
+          }
+        `}
+      </Script>
     </section>
   );
 };

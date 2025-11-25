@@ -12,15 +12,17 @@ const nextConfig = {
         hostname: 'via.placeholder.com',
       },
     ],
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 60,
   },
-  // Optimize for production
-  swcMinify: true,
   // Improve performance
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Enable static exports for better performance on Vercel
-  output: 'standalone',
+  // Experimental features for better performance
+  experimental: {
+    optimizePackageImports: ['framer-motion', 'react-icons'],
+  },
 }
 
 module.exports = nextConfig 

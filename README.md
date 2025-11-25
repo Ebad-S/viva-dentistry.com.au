@@ -62,8 +62,27 @@ npm start
 
 ## License
 
-MIT
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this content except in compliance with the License.
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+Copyright © 2025 Viva Dentistry. All rights reserved.
+
+This website and its content are protected by Australian copyright law and international treaties. Any unauthorized reproduction, distribution, or modification of this website's content is strictly prohibited.
+
+Licensed under the Australian Health Practitioner Regulation Agency (AHPRA) guidelines and regulations.
+
+For licensing inquiries, please contact:
+Viva Dentistry
+Park Plaza - Suite 4, 25-35A Park Road
+HURSTVILLE NSW 2220
+(Entrance via Cross Street)
+Phone: (02) 9586 0877
+Email: contact@viva-dentistry.com.au
 
 ---
 
-Created for Viva Dentistry by Dr. Amin Yeganeh
+Created by Serenity Webcrafts for Viva Dentistry
+Dr. Amin Yeganeh
+Dental Provider Number: DEN0001234567 
+ABN: 12 345 678 901

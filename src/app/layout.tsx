@@ -2,9 +2,8 @@ import '@/styles/globals.css';
 import { Inter, Poppins } from 'next/font/google';
 import { Providers } from './providers';
 import type { Metadata, Viewport } from 'next';
-import Image from 'next/image';
-import { FaInstagram } from 'react-icons/fa';
-import ThemeToggle from '@/components/ThemeToggle';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import Script from 'next/script';
 
 const inter = Inter({
@@ -31,29 +30,29 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vivadentistry.vercel.app'),
-  title: 'Viva Dentistry | Dr. Amin Yeganeh | Professional Dental Care',
-  description: 'Dr. Amin Yeganeh\'s Viva Dentistry offers professional dental services including general dentistry, cosmetic procedures, dental implants, and clear aligners. Dr. Yeganeh holds a Post-Graduate Diploma in Dental Implantology and is a preferred provider for Linea Clear Aligners and FastBraces.',
-  keywords: 'dentist, dental clinic, dental care, teeth whitening, dental implants, emergency dentist, Dr. Amin Yeganeh, clear aligners, FastBraces, PGIDS, dental technology',
+  metadataBase: new URL('https://viva-dentistry.com.au'),
+  title: 'Dental Implants Hurstville | Viva Dentistry | Dr. Amin Yeganeh',
+  description: 'Expert dental care in Hurstville NSW. Dr. Amin Yeganeh (PGIDS) offers dental implants, clear aligners, teeth whitening & emergency dental services. Book your appointment today - (02) 9586 0877',
+  keywords: 'dentist Hurstville, dental implants Hurstville, teeth whitening Hurstville, clear aligners, emergency dentist, Dr. Amin Yeganeh, PGIDS, dental clinic NSW, Invisalign, FastBraces',
   authors: [{ name: 'Dr. Amin Yeganeh, PGIDS, BDS' }],
   creator: 'Viva Dentistry',
   alternates: {
-    canonical: 'https://vivadentistry.vercel.app',
+    canonical: 'https://viva-dentistry.com.au',
   },
   icons: [
-    { rel: 'icon', url: '/favicon.jpg' },
-    { rel: 'apple-touch-icon', url: '/favicon.jpg' },
+    { rel: 'icon', url: '/images/favicon.png' },
+    { rel: 'apple-touch-icon', url: '/images/favicon.png' },
   ],
   openGraph: {
-    title: 'Viva Dentistry | Dr. Amin Yeganeh | Professional Dental Care',
-    description: 'Dr. Amin Yeganeh\'s Viva Dentistry offers professional dental services including general dentistry, cosmetic procedures, dental implants, and clear aligners. Dr. Yeganeh holds a Post-Graduate Diploma in Dental Implantology and is a preferred provider for Linea Clear Aligners and FastBraces.',
-    url: 'https://vivadentistry.vercel.app',
+    title: 'Dental Implants Hurstville | Viva Dentistry | Dr. Amin Yeganeh',
+    description: 'Expert dental care in Hurstville NSW. Dr. Amin Yeganeh (PGIDS) offers dental implants, clear aligners, teeth whitening & emergency dental services. Book your appointment today - (02) 9586 0877',
+    url: 'https://viva-dentistry.com.au',
     siteName: 'Viva Dentistry',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/logo.jpg',
+        url: '/images/logo.png',
         width: 800,
         height: 600,
         alt: 'Viva Dentistry Logo',
@@ -79,110 +78,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+    <html lang="en" suppressHydrationWarning className={`scroll-smooth ${inter.variable} ${poppins.variable}`}>
       <head>
-        <link rel="canonical" href="https://vivadentistry.vercel.app" />
+        <link rel="canonical" href="https://viva-dentistry.com.au" />
       </head>
-      <body className={`${inter.variable} ${poppins.variable} font-sans`}>
+      <body className="font-sans" suppressHydrationWarning>
         <Providers>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen relative">
             <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-primary-600 focus:text-white focus:z-50">
               Skip to main content
             </a>
-            <header className="sticky top-0 z-50 bg-white dark:bg-secondary-900 shadow-sm dark:shadow-secondary-800/20" role="banner">
-              <div className="container py-4">
-                <div className="flex justify-between items-center">
-                  <a href="/" className="flex items-center gap-4" aria-label="Viva Dentistry Home">
-                    <div className="flex items-center">
-                      <Image 
-                        src="/logo.jpg" 
-                        alt="Viva Dentistry Logo" 
-                        width={80} 
-                        height={80}
-                        className="rounded-md"
-                        priority
-                      />
-                      <span className="text-3xl font-bold text-primary-600 dark:text-primary-400 ml-4">Viva Dentistry</span>
-                    </div>
-                  </a>
-                  <nav className="hidden md:flex space-x-8 items-center" aria-label="Main Navigation">
-                    <a href="#services" className="relative font-medium text-secondary-700 dark:text-secondary-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 py-2 group">
-                      Services
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#about" className="relative font-medium text-secondary-700 dark:text-secondary-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 py-2 group">
-                      About
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#testimonials" className="relative font-medium text-secondary-700 dark:text-secondary-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 py-2 group">
-                      Testimonials
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#gallery" className="relative font-medium text-secondary-700 dark:text-secondary-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 py-2 group">
-                      Gallery
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#faq" className="relative font-medium text-secondary-700 dark:text-secondary-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 py-2 group">
-                      FAQ
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#contact" className="px-5 py-2 bg-primary-600 hover:bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-600 text-white rounded-md transition-colors duration-300 shadow-sm hover:shadow-md">
-                      Contact
-                    </a>
-                    <ThemeToggle />
-                  </nav>
-                  <div className="md:hidden flex items-center space-x-4">
-                    <ThemeToggle />
-                    <button className="p-2 text-secondary-800 dark:text-secondary-200" aria-label="Open menu">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </header>
-            <main id="main-content" className="flex-grow" role="main">
+            <Header />
+            <main id="main-content" className="flex-grow relative" role="main">
               {children}
             </main>
-            <footer className="bg-secondary-900 text-white py-12" role="contentinfo">
-              <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div>
-                    <h3 className="text-xl font-bold mb-4 text-white">Viva Dentistry</h3>
-                    <p className="mb-4 text-secondary-300">Dr. Amin Yeganeh providing quality dental care for the whole family.</p>
-                    <div className="flex items-center mt-4">
-                      <a 
-                        href="https://www.instagram.com/viva_dentistry" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center text-white hover:text-primary-400 transition-colors"
-                        aria-label="Follow us on Instagram"
-                      >
-                        <FaInstagram className="w-6 h-6 mr-2" aria-hidden="true" />
-                        <span>Follow us on Instagram</span>
-                      </a>
-                    </div>
-                    <p className="mt-4 text-secondary-400">© {new Date().getFullYear()} Viva Dentistry. All rights reserved.</p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-4 text-white">Contact</h3>
-                    <address className="not-italic">
-                      <p className="mb-2 text-secondary-300">123 Dental Street</p>
-                      <p className="mb-2 text-secondary-300">City, State 12345</p>
-                      <p className="mb-2 text-secondary-300">Phone: <a href="tel:+11234567890" className="hover:text-primary-400 transition-colors">(123) 456-7890</a></p>
-                      <p className="text-secondary-300">Email: <a href="mailto:info@vivadentistry.com" className="hover:text-primary-400 transition-colors">info@vivadentistry.com</a></p>
-                    </address>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-4 text-white">Hours</h3>
-                    <p className="mb-2 text-secondary-300">Monday - Friday: 8am - 6pm</p>
-                    <p className="mb-2 text-secondary-300">Saturday: 9am - 3pm</p>
-                    <p className="text-secondary-300">Sunday: Closed</p>
-                  </div>
-                </div>
-              </div>
-            </footer>
+            <Footer />
           </div>
         </Providers>
         
@@ -193,21 +103,23 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Dentist",
               "name": "Viva Dentistry",
-              "image": "https://vivadentistry.vercel.app/logo.jpg",
-              "url": "https://vivadentistry.vercel.app",
-              "telephone": "+11234567890",
+              "image": "https://viva-dentistry.com.au/images/logo.png",
+              "url": "https://viva-dentistry.com.au",
+              "telephone": "+61295860877",
+              "faxNumber": "+61295860878",
+              "email": "contact@viva-dentistry.com.au",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "123 Dental Street",
-                "addressLocality": "City",
-                "addressRegion": "State",
-                "postalCode": "12345",
-                "addressCountry": "US"
+                "streetAddress": "Park Plaza - Suite 4, 25-35A Park Road",
+                "addressLocality": "Hurstville",
+                "addressRegion": "NSW",
+                "postalCode": "2220",
+                "addressCountry": "AU"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 40.7128,
-                "longitude": -74.0060
+                "latitude": -33.9681,
+                "longitude": 151.1037
               },
               "openingHoursSpecification": [
                 {
@@ -227,7 +139,32 @@ export default function RootLayout({
                 "https://www.instagram.com/viva_dentistry"
               ],
               "priceRange": "$$",
-              "servesCuisine": "Dental Services"
+              "speciality": [
+                "Dental Implants",
+                "Clear Aligners",
+                "Teeth Whitening",
+                "Cosmetic Dentistry",
+                "General Dentistry",
+                "Emergency Dental Care"
+              ],
+              "paymentAccepted": [
+                "Cash",
+                "Credit Card",
+                "EFTPOS",
+                "Health Insurance"
+              ],
+              "areaServed": {
+                "@type": "City",
+                "name": "Hurstville",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "New South Wales",
+                  "containedInPlace": {
+                    "@type": "Country",
+                    "name": "Australia"
+                  }
+                }
+              }
             }
           `}
         </Script>

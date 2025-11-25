@@ -8,8 +8,8 @@ const galleryItems = [
   {
     id: 1,
     title: 'Teeth Whitening',
-    before: '/images/gallery/before/teeth-whitening.jpg',
-    after: '/images/gallery/after/teeth-whitening.jpg',
+    before: '/images/gallery/before/teeth-whitening.png',
+    after: '/images/gallery/after/teeth-whitening.png',
     description: 'Professional teeth whitening treatment that removes stains and discoloration for a brighter smile.',
   },
   {
@@ -37,7 +37,7 @@ const galleryItems = [
     id: 5,
     title: 'Smile Makeover',
     before: '/images/gallery/before/smile-makeover.jpg',
-    after: '/images/gallery/after/smile-makeover.jpg',
+    after: '/images/gallery/after/smile-makeover.png',
     description: 'Comprehensive treatment plan that combines multiple cosmetic procedures for a complete smile transformation.',
   },
   {
@@ -73,40 +73,46 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {galleryItems.map((item) => (
             <motion.div
               key={item.id}
               whileHover={{ y: -5 }}
-              className="bg-white dark:bg-secondary-900 rounded-xl overflow-hidden shadow-md cursor-pointer"
+              className="bg-white dark:bg-secondary-900 rounded-xl overflow-hidden shadow-md cursor-pointer h-full flex flex-col"
               onClick={() => openModal(item.id)}
             >
-              <div className="relative h-64">
+              <div className="relative h-64 flex-shrink-0">
                 <div className="absolute inset-0 flex">
                   <div className="w-1/2 relative">
                     <Image
                       src={item.before}
-                      alt={`${item.title} before`}
+                      alt={`${item.title} before treatment - Hurstville dental patient case by Dr. Amin Yeganeh`}
                       fill
-                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
+                      priority={item.id <= 2}
+                      loading={item.id <= 2 ? 'eager' : 'lazy'}
+                      style={{ objectFit: 'contain' }}
                     />
                     <div className="absolute top-2 left-2 bg-secondary-800/70 text-white text-xs px-2 py-1 rounded">Before</div>
                   </div>
                   <div className="w-1/2 relative">
                     <Image
                       src={item.after}
-                      alt={`${item.title} after`}
+                      alt={`${item.title} after treatment results - Viva Dentistry Hurstville success case`}
                       fill
-                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
+                      priority={item.id <= 2}
+                      loading={item.id <= 2 ? 'eager' : 'lazy'}
+                      style={{ objectFit: 'contain' }}
                     />
                     <div className="absolute top-2 right-2 bg-primary-600/70 text-white text-xs px-2 py-1 rounded">After</div>
                   </div>
                 </div>
               </div>
-              <div className="p-4">
+              <div className="p-4 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-secondary-600 dark:text-secondary-400 text-sm line-clamp-2">{item.description}</p>
-                <button className="mt-3 text-primary-600 dark:text-primary-400 text-sm font-medium hover:underline">
+                <p className="text-secondary-600 dark:text-secondary-400 text-sm line-clamp-2 flex-grow">{item.description}</p>
+                <button className="mt-3 text-primary-600 dark:text-primary-400 text-sm font-medium hover:underline self-start">
                   View Details
                 </button>
               </div>
@@ -140,9 +146,11 @@ const Gallery = () => {
                     <div className="relative h-80 rounded-lg overflow-hidden">
                       <Image
                         src={item.before}
-                        alt={`${item.title} before`}
+                        alt={`${item.title} before treatment - detailed view of dental case in Hurstville`}
                         fill
-                        style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        loading="lazy"
+                        style={{ objectFit: 'contain' }}
                         className="rounded-lg"
                       />
                       <div className="absolute top-4 left-4 bg-secondary-800/70 text-white px-3 py-1 rounded-full">Before</div>
@@ -150,9 +158,11 @@ const Gallery = () => {
                     <div className="relative h-80 rounded-lg overflow-hidden">
                       <Image
                         src={item.after}
-                        alt={`${item.title} after`}
+                        alt={`${item.title} treatment results - Dr. Amin Yeganeh dental transformation`}
                         fill
-                        style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        loading="lazy"
+                        style={{ objectFit: 'contain' }}
                         className="rounded-lg"
                       />
                       <div className="absolute top-4 right-4 bg-primary-600/70 text-white px-3 py-1 rounded-full">After</div>

@@ -5,7 +5,14 @@ import { ReactNode } from 'react';
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+    <ThemeProvider 
+      attribute="class" 
+      defaultTheme="light" 
+      enableSystem={false}
+      disableTransitionOnChange={true}
+      storageKey="viva-dentistry-theme"
+      forcedTheme={undefined}
+    >
       {children}
     </ThemeProvider>
   );

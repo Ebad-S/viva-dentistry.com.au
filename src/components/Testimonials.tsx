@@ -92,7 +92,7 @@ const Testimonials = () => {
         <div className="relative max-w-4xl mx-auto">
           <div 
             ref={testimonialRef}
-            className="overflow-hidden"
+            className="relative overflow-hidden"
           >
             <motion.div
               key={currentIndex}
@@ -111,6 +111,8 @@ const Testimonials = () => {
                       src={testimonials[currentIndex].image}
                       alt={testimonials[currentIndex].name}
                       fill
+                      sizes="(max-width: 768px) 96px, 128px"
+                      loading="lazy"
                       style={{ objectFit: 'cover' }}
                       className="rounded-full"
                     />
@@ -189,7 +191,9 @@ const Testimonials = () => {
         {/* Google Reviews Badge */}
         <div className="mt-16 text-center">
           <a
-            href="#"
+            href="https://www.google.com/search?rlz=1C2CHZN_en-GBAU1069AU1069&sca_esv=392931b93c8c4b33&sxsrf=AE3TifOGLlQoUearZLQOGVKogJrMtLFnIw:1755319854029&si=AMgyJEuzsz2NflaaWzrzdpjxXXRaJ2hfdMsbe_mSWso6src8s58zmWjhkz7gEDpoFQKUmhvmQ34ujVunGb0p8ZDmmau3bYqNqac60XD2Y7HJUv28EmOt-4cu6L-qUT2Q3gSEXBXzfQfX&q=Viva+Dentistry+Reviews&sa=X&ved=2ahUKEwjj9fSCxI6PAxV-lq8BHfxnF4YQ0bkNegQIUBAE&biw=1798&bih=919&dpr=1"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-white dark:bg-secondary-800 rounded-lg shadow-md hover:shadow-lg transition-shadow"
           >
             <svg className="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -198,7 +202,7 @@ const Testimonials = () => {
               <path d="M12 22.0415C14.583 22.0415 16.93 21.0785 18.7045 19.4785L15.6095 16.8415C14.5718 17.5719 13.3038 17.9789 12 18.0415C9.39903 18.0415 7.19053 16.3335 6.35853 14.0575L3.09753 16.5945C4.75253 19.778 8.11353 22.0415 12 22.0415Z" fill="#4CAF50"/>
               <path d="M21.8055 10.0415H12V14.0415H17.6515C17.2571 15.1019 16.5467 16.0213 15.608 16.7415L15.6095 16.7405L18.7045 19.3775C18.4855 19.5775 22 17.0415 22 12.0415C22 11.3595 21.931 10.6925 21.8055 10.0415Z" fill="#1976D2"/>
             </svg>
-            <span className="text-secondary-800 dark:text-secondary-200 font-medium">See all our Google Reviews</span>
+            <span className="text-secondary-800 dark:text-secondary-200 font-medium">Review us on Google</span>
           </a>
         </div>
       </div>

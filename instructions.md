@@ -7,7 +7,7 @@ Develop a high-performance, SEO-optimized, lead-generating website for a dental 
 - **Frontend**: React (with Next.js for SEO & SSR)
 - **Backend**: Django + Django REST Framework
 - **Database**: MySQL (use local for development phase)
-- **Hosting**: Vercel (Frontend) + AWS/GCP/DigitalOcean (Backend & DB) (will update the source code before deploying)
+- **Hosting**: AWS/GCP/DigitalOcean (Frontend + Backend & DB) (will update the source code before deploying)
 - **Security**: SSL Encryption, Secure API Endpoints, reCAPTCHA
 
 ---
@@ -96,7 +96,7 @@ Develop a high-performance, SEO-optimized, lead-generating website for a dental 
 ---
 
 ## **6. Deployment & Hosting**
-- **Frontend (Next.js)**: Vercel for fast global delivery.
+- **Frontend (Next.js)**: AWS/GCP/DigitalOcean for fast global delivery.
 - **Backend (Django & MySQL)**: AWS/GCP/DigitalOcean.
 - **Database Security**: Encrypted backups and automated database scaling.
 - **Monitoring & Logging**: CloudWatch / Sentry for error tracking.
@@ -154,7 +154,7 @@ Action URL-based form handler
 </form>
 ```
 
-🔸 Option 2: Netlify Forms (if static export — not applicable for SSR Next.js on Vercel)
+🔸 Option 2: Netlify Forms (if static export — not applicable for SSR Next.js)
 
-🔸 Option 3: Vercel Edge Function + Email Service (advanced)
+🔸 Option 3: Custom Edge Function + Email Service (advanced)
 If you want custom behavior, you can build a small serverless function (/api/contact.js) in your Next.js project and send mail via SendGrid/Mailgun/Resend.
