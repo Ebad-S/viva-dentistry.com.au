@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  viva-dentistry:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+      - RECAPTCHA_SECRET_KEY=${RECAPTCHA_SECRET_KEY}
+      - RECAPTCHA_PROJECT_ID=${RECAPTCHA_PROJECT_ID}
+      - RECAPTCHA_API_KEY=${RECAPTCHA_API_KEY}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
