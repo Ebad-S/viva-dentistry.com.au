@@ -67,7 +67,16 @@ const Header = () => {
               className="p-2 text-secondary-800 dark:text-secondary-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200" 
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
+              role="button"
+              tabIndex={0}
               onClick={toggleMobileMenu}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  toggleMobileMenu();
+                }
+              }}
             >
               {isMobileMenuOpen ? (
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
@@ -83,11 +92,16 @@ const Header = () => {
         </div>
         
         {/* Mobile Menu */}
-        <div className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-          isMobileMenuOpen 
-            ? 'max-h-96 opacity-100 border-t border-secondary-200 dark:border-secondary-700' 
-            : 'max-h-0 opacity-0'
-        }`}>
+        <div 
+          id="mobile-menu"
+          className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+            isMobileMenuOpen 
+              ? 'max-h-96 opacity-100 border-t border-secondary-200 dark:border-secondary-700' 
+              : 'max-h-0 opacity-0'
+          }`}
+          role="menu"
+          aria-labelledby="mobile-menu-button"
+        >
           <nav className="container py-4" aria-label="Mobile Navigation">
             <div className="flex flex-col space-y-4">
               <a 

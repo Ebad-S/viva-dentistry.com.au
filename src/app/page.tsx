@@ -1,13 +1,11 @@
-import { lazy, Suspense } from 'react';
 import ScrollAnimation from '@/components/ScrollAnimation';
-
-// Lazy load heavy components
-const Services = lazy(() => import('@/components/Services'));
-const About = lazy(() => import('@/components/About'));
-const Testimonials = lazy(() => import('@/components/Testimonials'));
-const Gallery = lazy(() => import('@/components/Gallery'));
-const FAQ = lazy(() => import('@/components/FAQ'));
-const Contact = lazy(() => import('@/components/Contact'));
+import Services from '@/components/Services';
+import About from '@/components/About';
+import Testimonials from '@/components/Testimonials';
+import Gallery from '@/components/Gallery';
+import FAQ from '@/components/FAQ';
+import Contact from '@/components/Contact';
+import LocalCitations from '@/components/LocalCitations';
 
 export default function Home() {
   return (
@@ -20,7 +18,10 @@ export default function Home() {
               <h1 id="hero-heading" className="text-5xl md:text-6xl font-bold mb-6 text-shadow-lg">Viva Dentistry</h1>
             </ScrollAnimation>
             <ScrollAnimation animation="fadeInUp" delay={0.4}>
-              <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed">Welcome to Dr. Amin Yeganeh's dental clinic! We provide high-quality dental care for the whole family.</p>
+              <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed">
+                Welcome to Dr. Amin Yeganeh's dental clinic!<br />
+                We provide high-quality dental care for the whole family.
+              </p>
             </ScrollAnimation>
             <ScrollAnimation animation="slideUp" delay={0.6}>
               <a href="#contact" className="btn btn-secondary hover:scale-105 transform transition-all duration-300 dark:bg-secondary-500 dark:hover:bg-secondary-400 dark:text-white shadow-xl">Book an Appointment</a>
@@ -30,45 +31,37 @@ export default function Home() {
       </ScrollAnimation>
       
       <ScrollAnimation animation="slideUp">
-        <Suspense fallback={<div className="py-20 text-center">Loading services...</div>}>
-          <Services />
-        </Suspense>
+        <Services />
       </ScrollAnimation>
       
       <ScrollAnimation animation="fadeInUp">
-        <Suspense fallback={<div className="py-20 text-center">Loading about...</div>}>
-          <About />
-        </Suspense>
+        <About />
       </ScrollAnimation>
       
       <ScrollAnimation animation="slideLeft">
         <section id="testimonials" aria-label="Patient Testimonials">
-          <Suspense fallback={<div className="py-20 text-center">Loading testimonials...</div>}>
-            <Testimonials />
-          </Suspense>
+          <Testimonials />
         </section>
       </ScrollAnimation>
       
       <ScrollAnimation animation="slideRight">
         <section id="gallery" aria-label="Before and After Gallery">
-          <Suspense fallback={<div className="py-20 text-center">Loading gallery...</div>}>
-            <Gallery />
-          </Suspense>
+          <Gallery />
         </section>
       </ScrollAnimation>
       
       <ScrollAnimation animation="fadeIn">
         <section id="faq" aria-label="Frequently Asked Questions">
-          <Suspense fallback={<div className="py-20 text-center">Loading FAQ...</div>}>
-            <FAQ />
-          </Suspense>
+          <FAQ />
         </section>
       </ScrollAnimation>
       
+      <ScrollAnimation animation="fadeIn">
+        <LocalCitations />
+      </ScrollAnimation>
+      
       <ScrollAnimation animation="slideUp">
-        <Suspense fallback={<div className="py-20 text-center">Loading contact...</div>}>
-          <Contact />
-        </Suspense>
+        <Contact />
       </ScrollAnimation>
     </main>
   );

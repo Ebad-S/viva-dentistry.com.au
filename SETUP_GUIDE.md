@@ -5,7 +5,7 @@
 ### 1. **Contact Form with Email Functionality**
 - ✅ Professional email templates (clinic + patient confirmation)
 - ✅ Real-time form validation with error states
-- ✅ Spam protection with reCAPTCHA v3
+- ✅ Form validation and error handling
 - ✅ Comprehensive error handling
 - ✅ Success/error feedback UI
 
@@ -39,19 +39,19 @@ RESEND_API_KEY=re_your_actual_api_key_here
    - Verify DNS records
    - Update the `from` email in `/api/contact/route.ts`
 
-### Step 2: reCAPTCHA Setup (Optional but Recommended)
+### Step 2: Production Environment Setup
 
-1. **Get reCAPTCHA keys**: https://www.google.com/recaptcha/admin/
-   - Choose reCAPTCHA v3
-   - Add your domain
-
-2. **Add to environment variables**:
+1. **Set production environment**:
 
 ```bash
 # Add to .env.local:
-NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_site_key_here
-RECAPTCHA_SECRET_KEY=your_secret_key_here
+NODE_ENV=production
 ```
+
+2. **Verify build optimization**:
+   - CSS is properly compiled
+   - Images are optimized
+   - JavaScript is minified
 
 ### Step 3: Production Deployment
 
@@ -87,9 +87,9 @@ The system sends two emails:
 - Add new fields with proper validation
 - Customize error messages
 
-### reCAPTCHA Settings
-- Adjust score threshold in the API route
-- Disable if needed by removing environment variables
+### Form Settings
+- Adjust validation rules in Contact component
+- Customize error messages and styling
 
 ## 🚨 Fallback Behavior
 
@@ -98,10 +98,9 @@ The system sends two emails:
 - Directs users to call directly: (02) 9586 0877
 - Error details logged for debugging
 
-### If reCAPTCHA Fails:
-- Form still works without reCAPTCHA
-- Warning logged in console
-- No user experience impact
+### If Email Service Fails:
+- Form shows clear error message with fallback contact info
+- Error details logged for debugging
 
 ## 📊 Monitoring & Analytics
 
@@ -120,7 +119,7 @@ The system sends two emails:
 ### Built-in Protection:
 - ✅ Input sanitization
 - ✅ Email format validation
-- ✅ Rate limiting (via reCAPTCHA)
+- ✅ Input validation and sanitization
 - ✅ XSS prevention
 - ✅ CSRF protection
 
@@ -148,10 +147,3 @@ If you need help with setup:
 The contact form is now production-ready with professional email handling and spam protection! 🎉
 
 
-- VPS: 50GB $45/m
-- biz ultimate: 150 GB $36 --> blackfridaye offer: 
-
-
-self managed: $2800 / 1 year (1000 discount for today only)
-$185.50/m from next year
-domain renewal: $107.65 for 5 years

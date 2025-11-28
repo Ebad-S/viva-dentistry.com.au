@@ -5,17 +5,6 @@ import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFax, FaClock, FaDirections, FaExclamationTriangle } from 'react-icons/fa';
 import ScrollAnimation from './ScrollAnimation';
 
-// Declare grecaptcha types for TypeScript
-declare global {
-  interface Window {
-    grecaptcha: {
-      enterprise: {
-        ready: (callback: () => void) => void;
-        execute: (siteKey: string, options: { action: string }) => Promise<string>;
-      };
-    };
-  }
-}
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -88,7 +77,6 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {

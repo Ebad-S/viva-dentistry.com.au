@@ -26,7 +26,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: FaFacebookF, href: '#', color: 'hover:text-blue-600' },
+    { name: 'Facebook', icon: FaFacebookF, href: 'https://www.facebook.com/vivadentistry', color: 'hover:text-blue-600' },
     { name: 'Instagram', icon: FaInstagram, href: 'https://www.instagram.com/viva_dentistry/', color: 'hover:text-pink-600' }
   ];
 
