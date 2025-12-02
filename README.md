@@ -38,6 +38,14 @@ npm run build
 npm start
 ```
 
+TODO: before deployment
+```
+- Verify your domain in Resend:
+Go to Resend Dashboard: https://resend.com/domains
+- Add Domain: Add viva-dentistry.com.au
+- Verify DNS: Add the required DNS records to your domain
+- Update API: Change the from address back to noreply@viva-dentistry.com.au
+```
 ## Project Structure
 
 - `/src/app`: Next.js app router pages
