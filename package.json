@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "HOST=0.0.0.0 PORT=3000 next start",
+    "start": "next start -H 0.0.0.0 -p 3000",
     "start:standalone": "HOST=0.0.0.0 PORT=3000 node .next/standalone/server.js",
     "lint": "next lint"
   },
