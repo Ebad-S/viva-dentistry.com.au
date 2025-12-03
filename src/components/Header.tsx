@@ -26,10 +26,9 @@ const Header = () => {
               <Image 
                 src="/images/logo.png" 
                 alt="Viva Dentistry Logo" 
-                width={80} 
+                width={220} 
                 height={80}
                 className="rounded-md"
-                style={{ width: "auto", height: "auto" }}
                 priority
               />
               <span className="text-3xl font-bold text-primary-600 dark:text-primary-400 ml-4">Viva Dentistry</span>
