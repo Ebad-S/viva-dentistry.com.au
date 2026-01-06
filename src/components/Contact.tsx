@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFax, FaClock, FaDirections, FaExclamationTriangle } from 'react-icons/fa';
+import { FaPhone, FaMobileAlt, FaEnvelope, FaMapMarkerAlt, FaFax, FaClock, FaDirections, FaExclamationTriangle } from 'react-icons/fa';
 import ScrollAnimation from './ScrollAnimation';
 
 
@@ -133,8 +133,20 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Phone</h4>
-                    <a href="tel:+61295860877" className="hover:underline text-lg">
+                    <a href="tel:+61295860877" className="hover:underline text-lg block">
                       (02) 9586 0877
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-luxe-cream to-luxe-sand text-primary-800 rounded-lg flex items-center justify-center shadow-lg">
+                    <FaMobileAlt className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Mobile</h4>
+                    <a href="tel:+61422190502" className="hover:underline text-lg block">
+                      (+61) 0422 190 502
                     </a>
                   </div>
                 </div>
@@ -387,7 +399,7 @@ const Contact = () => {
                     <div>
                       <p className="font-semibold">Error sending request</p>
                       <p className="text-sm">
-                        {errorMessage || 'Something went wrong. Please try again or call us directly at (02) 9586 0877.'}
+                        {errorMessage || 'Something went wrong. Please try again or call us directly at (02) 9586 0877 or (+61) 0422 190 502.'}
                       </p>
                     </div>
                   </div>

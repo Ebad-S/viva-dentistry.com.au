@@ -44,7 +44,7 @@ TODO: before deployment
 Go to Resend Dashboard: https://resend.com/domains
 - Add Domain: Add viva-dentistry.com.au
 - Verify DNS: Add the required DNS records to your domain
-- Update API: Change the from address back to noreply@viva-dentistry.com.au
+- Update API: Change the from your address back to noreply@viva-dentistry.com.au
 ```
 ## Project Structure
 
@@ -86,6 +86,7 @@ Park Plaza - Suite 4, 25-35A Park Road
 HURSTVILLE NSW 2220
 (Entrance via Cross Street)
 Phone: (02) 9586 0877
+Mobile: (+61) 0422 190 502
 Email: contact@viva-dentistry.com.au
 
 ---

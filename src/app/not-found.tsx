@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaHome, FaPhone } from 'react-icons/fa';
+import { FaHome, FaPhone, FaMobileAlt } from 'react-icons/fa';
 
 export default function NotFound() {
   return (
@@ -27,14 +27,24 @@ export default function NotFound() {
           
           <div className="text-secondary-600 dark:text-secondary-300">
             <p className="mb-2">Need immediate dental care?</p>
-            <a 
-              href="tel:+61295860877"
-              className="inline-flex items-center gap-2 px-4 py-2 border border-primary-600 text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-              aria-label="Call Viva Dentistry"
-            >
-              <FaPhone className="w-4 h-4" />
-              Call (02) 9586 0877
-            </a>
+            <div className="flex flex-col sm:flex-row gap-2 justify-center">
+              <a 
+                href="tel:+61295860877"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-primary-600 text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                aria-label="Call Viva Dentistry Main Phone"
+              >
+                <FaPhone className="w-4 h-4" />
+                Call (02) 9586 0877
+              </a>
+              <a 
+                href="tel:+61422190502"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-primary-600 text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                aria-label="Call Viva Dentistry Mobile"
+              >
+                <FaMobileAlt className="w-4 h-4" />
+                Call (+61) 0422 190 502
+              </a>
+            </div>
           </div>
         </div>
       </div>

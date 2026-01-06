@@ -120,7 +120,7 @@ export default function RootLayout({
               "name": "Viva Dentistry",
               "image": "https://viva-dentistry.com.au/images/logo.png",
               "url": "https://viva-dentistry.com.au",
-              "telephone": "+61295860877",
+              "telephone": ["+61295860877", "+61422190502"],
               "faxNumber": "+61295860878",
               "email": "contact@viva-dentistry.com.au",
               "address": {

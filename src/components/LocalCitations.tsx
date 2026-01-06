@@ -1,6 +1,6 @@
 'use client';
 
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaDirections } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaMobileAlt, FaEnvelope, FaClock, FaDirections } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const LocalCitations = () => {
@@ -11,15 +11,10 @@ const LocalCitations = () => {
     state: "NSW",
     postcode: "2220",
     phone: "(02) 9586 0877",
+    mobile: "(+61) 0422 190 502",
     email: "contact@viva-dentistry.com.au",
     website: "https://viva-dentistry.com.au"
   };
-
-  const nearbyAreas = [
-    "Hurstville", "Kogarah", "Penshurst", "Mortdale", 
-    "Oatley", "Beverly Hills", "Narwee", "Riverwood",
-    "Peakhurst", "Lugarno", "Blakehurst", "Carss Park"
-  ];
 
   return (
     <section className="py-16 bg-secondary-50 dark:bg-secondary-900" aria-labelledby="local-info-heading">
@@ -39,11 +34,11 @@ const LocalCitations = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="max-w-2xl mx-auto">
           {/* Business Information */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="bg-white dark:bg-secondary-800 rounded-lg shadow-lg p-6"
@@ -73,6 +68,16 @@ const LocalCitations = () => {
                   className="text-secondary-800 dark:text-secondary-100 hover:text-primary-600 transition-colors"
                 >
                   {businessInfo.phone}
+                </a>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <FaMobileAlt className="text-primary-600 flex-shrink-0" />
+                <a 
+                  href={`tel:${businessInfo.mobile.replace(/[\s\(\)]/g, '')}`}
+                  className="text-secondary-800 dark:text-secondary-100 hover:text-primary-600 transition-colors"
+                >
+                  {businessInfo.mobile}
                 </a>
               </div>
 
@@ -113,46 +118,6 @@ const LocalCitations = () => {
               <FaDirections />
               Get Directions
             </a>
-          </motion.div>
-
-          {/* Service Areas */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-white dark:bg-secondary-800 rounded-lg shadow-lg p-6"
-          >
-            <h3 className="text-2xl font-bold text-secondary-800 dark:text-secondary-100 mb-6">
-              Areas We Serve
-            </h3>
-            
-            <p className="text-secondary-600 dark:text-secondary-300 mb-4">
-              Proudly serving patients from Hurstville and surrounding St George suburbs:
-            </p>
-            
-            <div className="grid grid-cols-2 gap-2">
-              {nearbyAreas.map((area, index) => (
-                <motion.div
-                  key={area}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 px-3 py-2 rounded-lg text-sm font-medium text-center"
-                >
-                  {area}
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="mt-6 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-lg">
-              <p className="text-sm text-primary-700 dark:text-primary-300">
-                <strong>Convenient Location:</strong> Just 2 minutes walk from Hurstville Station, 
-                with easy parking available. Perfect for patients commuting from Sydney CBD or 
-                surrounding suburbs.
-              </p>
-            </div>
           </motion.div>
         </div>
       </div>

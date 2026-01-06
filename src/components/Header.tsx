@@ -22,17 +22,14 @@ const Header = () => {
       <div className="container py-3">
         <div className="flex justify-between items-center">
           <a href="/" className="flex items-center gap-4" aria-label="Viva Dentistry Home">
-            <div className="flex items-center">
-              <Image 
-                src="/images/logo.png" 
-                alt="Viva Dentistry Logo" 
-                width={220} 
-                height={80}
-                className="rounded-md"
-                priority
-              />
-              <span className="text-3xl font-bold text-primary-600 dark:text-primary-400 ml-4">Viva Dentistry</span>
-            </div>
+            <Image 
+              src="/images/logo.png" 
+              alt="Viva Dentistry Logo" 
+              width={220} 
+              height={80}
+              className="h-12 md:h-14 lg:h-16 w-auto rounded-md"
+              priority
+            />
           </a>
           <nav className="hidden md:flex space-x-8 items-center" aria-label="Main Navigation">
             <a href="#services" className="relative font-medium text-secondary-700 dark:text-secondary-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 py-2 group">

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { 
   FaPhone, 
+  FaMobileAlt,
   FaEnvelope, 
   FaMapMarkerAlt, 
   FaFacebookF, 
@@ -43,19 +44,15 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-1"
           >
-            <div className="flex items-center mb-6">
+            <div className="mb-6">
               <Image
                 src="/images/logo.png"
                 alt="Viva Dentistry Logo"
-                width={50}
-                height={50}
-                className="rounded-lg mr-3"
-                style={{ width: "auto", height: "auto" }}
+                width={180}
+                height={65}
+                className="h-12 w-auto rounded-lg"
               />
-              <div>
-                <h3 className="text-xl font-bold">Viva Dentistry</h3>
-                <p className="text-sm text-secondary-300">Dr. Amin Yeganeh</p>
-              </div>
+              <p className="text-sm text-secondary-300 mt-2">Dr. Amin Yeganeh</p>
             </div>
             <p className="text-secondary-300 mb-6 text-sm leading-relaxed">
               Providing exceptional dental care in a comfortable and welcoming environment. 
@@ -147,8 +144,17 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <FaPhone className="w-4 h-4 mt-1 text-primary-400 flex-shrink-0" />
                 <div>
-                  <a href="tel:+61295860877" className="text-secondary-300 hover:text-white transition-colors text-sm">
+                  <a href="tel:+61295860877" className="text-secondary-300 hover:text-white transition-colors text-sm block">
                     (02) 9586 0877
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-3">
+                <FaMobileAlt className="w-4 h-4 mt-1 text-primary-400 flex-shrink-0" />
+                <div>
+                  <a href="tel:+61422190502" className="text-secondary-300 hover:text-white transition-colors text-sm block">
+                    (+61) 0422 190 502
                   </a>
                 </div>
               </div>
