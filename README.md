@@ -1,6 +1,10 @@
 # Viva Dentistry Website
 
-A modern, responsive website for Viva Dentistry built with Next.js, TypeScript, and Tailwind CSS.
+A modern, responsive SPA website for Viva Dentistry built with Next.js, TypeScript, and Tailwind CSS.
+
+![Homepage Screenshot](public/images/homepage.png)
+
+[Visit the **live** Viva Dentistry website](https://viva-dentistry.com.au/)
 
 ## Features
 
@@ -91,7 +95,8 @@ Email: contact@viva-dentistry.com.au
 
 ---
 
-Created by Serenity Webcrafts for Viva Dentistry
-Dr. Amin Yeganeh
-Dental Provider Number: DEN0001234567 
-ABN: 12 345 678 901
+Created by Serenity Webcrafts for
+- Viva Dentistry 🦷
+- Dr. Amin Yeganeh 
+- Dental Provider Number: DEN0001234567 
+- ABN: 12 345 678 901
