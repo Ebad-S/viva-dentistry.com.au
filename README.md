@@ -72,6 +72,41 @@ Go to Resend Dashboard: https://resend.com/domains
 - Safari (latest)
 - Edge (latest)
 
+## 📚 Dive Deeper
+
+Want to learn more about the project? Check out these comprehensive guides:
+
+### 📖 Documentation
+
+- **[TECHSTACK.md](./TECHSTACK.md)** - Complete technology stack overview
+  - All frameworks, libraries, and tools used
+  - Architecture patterns and design decisions
+  - Performance optimizations and best practices
+  - Deployment platforms and monitoring setup
+
+- **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** - Step-by-step setup instructions
+  - Environment configuration
+  - Dependency installation
+  - Development workflow
+  - Deployment procedures
+
+- **[FORM_FX.md](./FORM_FX.md)** - Contact form implementation deep-dive
+  - Complete form architecture documentation
+  - Client and server-side validation
+  - Email template system (Resend API)
+  - Error handling and debugging
+  - Recent fixes and troubleshooting guide
+
+### 🛠️ Development Tools
+
+- **[test-resend-diagnostic.js](./test-resend-diagnostic.js)** - Email system diagnostic tool
+  - Validates Resend API configuration
+  - Tests template accessibility and email delivery
+  - Troubleshoots authentication issues
+  - Run with: `node test-resend-diagnostic.js`
+
+---
+
 ## License
 
 Licensed under the Apache License, Version 2.0 (the "License");
